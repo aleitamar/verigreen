@@ -59,7 +59,7 @@ public class JenkinsServer {
      * Get a list of all the defined jobs on the server (at the summary level)
      *
      * @return list of defined jobs (summary level, for details @see Job#details
-     * @throws IOException
+     * @throws IOException TODO
      */
     public Map<String, Job> getJobs() throws IOException {
         List<Job> jobs = client.get("/", MainView.class).getJobs();
@@ -75,8 +75,9 @@ public class JenkinsServer {
     /**
      * Get a single Job from the server.
      *
+     * @param jobName TODO
      * @return A single Job, null if not present
-     * @throws IOException
+     * @throws IOException TODO
      */
     public JobWithDetails getJob(String jobName) throws  IOException {
         try {
@@ -95,9 +96,10 @@ public class JenkinsServer {
 
     /**
      * Create a job on the server using the provided xml
-     *
-     * @return the new job object
-     * @throws IOException
+     * 
+     * @param jobName TODO
+     * @param jobXml TODO
+     * @throws IOException TODO
      */
     public void createJob(String jobName, String jobXml) throws IOException {
         client.post_xml("/createItem?name=" + encode(jobName), jobXml);
@@ -105,9 +107,10 @@ public class JenkinsServer {
 
     /**
      * Get the xml description of an existing job
-     *
+     * 
+     * @param jobName TODO
      * @return the new job object
-     * @throws IOException
+     * @throws IOException TODO
      */
     public String getJobXml(String jobName) throws IOException {
         return client.get("/job/" + encode(jobName) + "/config.xml");
@@ -115,9 +118,10 @@ public class JenkinsServer {
 
     /**
      * Get the description of an existing Label
-     *
+     * 
+     * @param labelName TODO
      * @return label object
-     * @throws IOException
+     * @throws IOException TODO
      */
     public LabelWithDetails getLabel(String labelName) throws IOException {
         return client.get("/label/" + encode(labelName), LabelWithDetails.class);
@@ -128,7 +132,7 @@ public class JenkinsServer {
      * Get a list of all the computers on the server (at the summary level)
      *
      * @return list of defined computers (summary level, for details @see Computer#details
-     * @throws IOException
+     * @throws IOException TODO
      */
     public Map<String, Computer> getComputers() throws IOException {
         List<Computer> computers = client.get("computer/", Computer.class).getComputers();
@@ -144,8 +148,9 @@ public class JenkinsServer {
     /**
      * Update the xml description of an existing job
      *
-     * @return the new job object
-     * @throws IOException
+     * @param jobName TODO
+     * @param jobXml TODO
+     * @throws IOException TODO
      */
     public void updateJob(String jobName, String jobXml) throws IOException {
         client.post_xml("/job/" + encode(jobName) + "/config.xml", jobXml);

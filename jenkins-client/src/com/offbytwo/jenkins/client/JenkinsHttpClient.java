@@ -101,8 +101,8 @@ public class JenkinsHttpClient {
      * @param <T>
      *            type of the response
      * @return an instance of the supplied class
-     * @throws IOException
-     *             , HttpResponseException
+     * @throws IOException TODO
+     * @throws HttpResponseException TODO 
      */
     public <T extends BaseModel> T get(String path, Class<T> cls) throws IOException,
             HttpResponseException {
@@ -124,8 +124,8 @@ public class JenkinsHttpClient {
      * @param path
      *            path to request, can be relative or absolute
      * @return the entity text
-     * @throws IOException
-     *             , HttpResponseException
+     * @throws IOException TODO
+     * @throws HttpResponseException TODO
      */
     public String get(String path) throws IOException, HttpResponseException {
         HttpResponse response = client.execute(new HttpGet(api(path)), localContext);
@@ -148,8 +148,8 @@ public class JenkinsHttpClient {
      * @param path
      *            path to request, can be relative or absolute
      * @return the response stream
-     * @throws IOException
-     *             , HttpResponseException
+     * @throws IOException TODO
+     * @throws HttpResponseException TODO
      */
     public InputStream getFile(URI path) throws IOException, HttpResponseException {
         HttpResponse response = client.execute(new HttpGet(path), localContext);
@@ -174,8 +174,8 @@ public class JenkinsHttpClient {
      * @param <D>
      *            type of the data
      * @return an instance of the supplied class
-     * @throws IOException
-     *             , HttpResponseException
+     * @throws IOException TODO
+     * @throws HttpResponseException TODO
      */
     public <R extends BaseModel, D> R post(String path, D data, Class<R> cls) throws IOException,
             HttpResponseException {
@@ -209,11 +209,11 @@ public class JenkinsHttpClient {
      * 
      * @param path
      *            path to request, can be relative or absolute
-     * @param XML
+     * @param xml_data
      *            data data to post
      * @return A string containing the xml response (if present)
-     * @throws IOException
-     *             , HttpResponseException
+     * @throws IOException TODO
+     * @throws HttpResponseException TODO
      */
     public String post_xml(String path, String xml_data) throws IOException, HttpResponseException {
         HttpPost request = new HttpPost(api(path));
@@ -243,8 +243,8 @@ public class JenkinsHttpClient {
      * 
      * @param path
      *            path to request
-     * @throws IOException
-     *             , HttpResponseException
+     * @throws IOException TODO
+     * @throws HttpResponseException TODO
      */
     public void post(String path) throws IOException, HttpResponseException {
         post(path, null, null);

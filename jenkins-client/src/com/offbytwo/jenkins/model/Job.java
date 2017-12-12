@@ -42,6 +42,7 @@ public class Job extends BaseModel {
 
     /**
      * Trigger a build without parameters
+     * @throws IOException TODO
      */
     public void build() throws IOException {
         client.post(url + "build");
@@ -51,7 +52,7 @@ public class Job extends BaseModel {
      * Trigger a parameterized build
      *
      * @param params the job parameters
-     * @throws IOException
+     * @throws IOException TODO
      */
     public void build(Map<String, String> params) throws IOException {
         String qs = join(Collections2.transform(params.entrySet(), new MapEntryToQueryStringPair()), "&");
