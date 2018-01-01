@@ -35,8 +35,8 @@ See the License for the specific language governing permissions and limitations 
 						<!-- <compilerArgument>-Xlint" "-Xlint:-path" "-Xlint:-options" "-Werror</compilerArgument> -->
 						<showWarnings>true</showWarnings>
 						<showDeprecation>true</showDeprecation>
-						<source>1.7</source>
-						<target>1.7</target>
+						<source>1.8</source>
+						<target>1.8</target>
 						<encoding>UTF-8</encoding>
 					</configuration>
 				</plugin>
@@ -82,7 +82,7 @@ See the License for the specific language governing permissions and limitations 
 		</pluginManagement>
 	</build>
 	<properties>
-		<spring.version>3.2.16.RELEASE</spring.version>
+		<spring.version>5.0.2.RELEASE</spring.version>
 		<junit.version>4.8</junit.version>
 		<jersey.version>2.6</jersey.version>
 		<jersey.client.version>2.6</jersey.client.version>
